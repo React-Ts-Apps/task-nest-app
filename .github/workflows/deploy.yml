@@ -18,9 +18,11 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
+        working-directory: task-front-end
         run: npm install
 
       - name: Build project
+        working-directory: task-front-end
         run: npm run build
 
       - name: Deploy to GitHub Pages
