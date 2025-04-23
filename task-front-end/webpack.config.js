@@ -24,7 +24,7 @@ module.exports = {
             },
             {
                 test: /\.css$/, // If you have any CSS files
-                use: ['style-loader', 'css-loader'],
+                use: ['style-loader', 'css-loader', 'postcss-loader'],
             },
         ],
     },
