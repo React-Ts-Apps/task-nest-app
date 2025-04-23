@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import { FaTasks } from "react-icons/fa";
-import { FiSun } from "react-icons/fi";
-import { FiMoon } from "react-icons/fi";
-import StyledIcon from "../common/StyledIcon";
-import ToggleSwitch from "../common/ToggleSwitch";
-import { useThemeContext } from "../../context/Theme/useThemeContext";
+import React from 'react';
+import styled from 'styled-components';
+import { FaTasks } from 'react-icons/fa';
+import { FiSun } from 'react-icons/fi';
+import { FiMoon } from 'react-icons/fi';
+import StyledIcon from '../common/StyledIcon';
+import ToggleSwitch from '../common/ToggleSwitch';
+import { useThemeContext } from '../../context/Theme/useThemeContext';
 
 const Nav = styled.div`
   background-color: ${({ theme }) => theme.navBg};
