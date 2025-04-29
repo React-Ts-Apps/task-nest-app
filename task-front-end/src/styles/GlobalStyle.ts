@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 body{
     background: ${({ theme }) => theme.background};
-color:${({ theme }) => theme.text};
+    color:${({ theme }) => theme.text};
+    font-family: 'Segoe UI', sans-serif;
 }
 `;

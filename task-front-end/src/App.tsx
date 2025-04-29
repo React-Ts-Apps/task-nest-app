@@ -1,13 +1,14 @@
 import React from 'react';
-import NavBar from './components/layout/NavBar';
 import { CustomThemeProvider } from './context/Theme/CustomThemeProvider';
 import './styles.css';
 import { GlobalStyle } from './styles/GlobalStyle';
+import Layout from './components/layout/Layout';
+
 const App = () => {
   return (
     <CustomThemeProvider>
       <GlobalStyle />
-      <NavBar />
+      <Layout />
     </CustomThemeProvider>
   );
 };
