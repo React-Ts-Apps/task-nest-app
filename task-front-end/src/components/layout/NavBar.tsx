@@ -22,9 +22,10 @@ const Container = styled.div`
   gap: 0.5rem;
 `;
 
-const Title = styled.h3`
+const Title = styled.h1`
   color: ${({ theme }) => theme.text};
   font-size: 1rem;
+  font-weight: bold;
 `;
 
 const NavBar = () => {
