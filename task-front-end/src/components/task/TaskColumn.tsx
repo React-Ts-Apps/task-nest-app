@@ -2,6 +2,7 @@ import React from 'react';
 import { styled } from 'styled-components';
 import type { TaskColumnData, TaskList } from '../../types/TaskProps';
 import TaskCard from './TaskCard';
+import { useDroppable } from '@dnd-kit/core';
 
 type TaskColumnProps = {
   tasks: TaskList;
@@ -24,8 +25,10 @@ const TaskColTitle = styled.h2`
 `;
 
 const TaskColumn = ({ column, tasks }: TaskColumnProps) => {
+  const { setNodeRef } = useDroppable({ id: column.id });
+
   return (
-    <TaskCol>
+    <TaskCol ref={setNodeRef}>
       <TaskColHeader>
         <TaskColTitle>{column.title}</TaskColTitle>
       </TaskColHeader>

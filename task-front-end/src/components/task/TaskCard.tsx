@@ -1,6 +1,7 @@
 import React from 'react';
 import { styled } from 'styled-components';
 import type { TaskItem } from '../../types/TaskProps';
+import { useDraggable } from '@dnd-kit/core';
 
 const TaskItemCard = styled.div`
   background-color: ${({ theme }) => theme.navBg};
@@ -28,11 +29,19 @@ const TaskId = styled.p`
 `;
 
 const TaskCard = ({ task }: { task: TaskItem }) => {
+  const { attributes, listeners, setNodeRef, transform } = useDraggable({
+    id: task.id,
+    data: { column: task.status },
+  });
+
+  const style = {
+    transform: transform ? `translate3d(${transform.x}px,${transform.y}px, 0)` : undefined,
+  };
+
   return (
-    <div>
+    <div {...attributes} {...listeners} ref={setNodeRef} style={style}>
       <TaskItemCard>
         <CardTitle>{task.title}</CardTitle>
-
         <TaskId>#{task.id}</TaskId>
       </TaskItemCard>
     </div>
