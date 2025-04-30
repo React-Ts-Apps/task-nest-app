@@ -12,19 +12,24 @@ const TaskCol = styled.div`
   background-colr: ${({ theme }) => theme.navBg};
   border-radius: 8px;
   box-shadow: ${({ theme }) => theme.boxShadow};
-  padding: 20px;
   height: 100vh;
 `;
-
+const TaskColHeader = styled.div`
+  background-color: ${({ theme }) => theme.navBg};
+  height: 60px;
+  padding: 20px;
+`;
 const TaskColTitle = styled.h2`
-  text-align: center;
   font-weight: bold;
 `;
 
 const TaskColumn = ({ column, tasks }: TaskColumnProps) => {
   return (
     <TaskCol>
-      <TaskColTitle>{column.title}</TaskColTitle>
+      <TaskColHeader>
+        <TaskColTitle>{column.title}</TaskColTitle>
+      </TaskColHeader>
+
       {tasks.map((task) => (
         <TaskCard key={task.id} task={task}></TaskCard>
       ))}
