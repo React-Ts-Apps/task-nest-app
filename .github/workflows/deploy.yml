@@ -21,7 +21,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: task-front-end
-        run: npm install
+        run: npm ci
 
       - name: Build project
         working-directory: task-front-end
