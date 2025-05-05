@@ -1,14 +1,15 @@
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 import { CustomThemeContext } from './CustomThemeContext';
 import { lightTheme, darkTheme } from '../../styles/themes';
 import { ThemeProvider } from 'styled-components';
+import useLocalStorage from '../../hooks/useLocalStorage';
 
 type childProps = {
   children: ReactNode;
 };
 
 export const CustomThemeProvider = ({ children }: childProps) => {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useLocalStorage('theme', true);
 
   const toggleTheme = () => setIsDark((prev) => !prev);
 
