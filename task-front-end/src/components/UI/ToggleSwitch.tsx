@@ -10,7 +10,6 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ checked, toggle }) => {
     <label className="inline-flex items-center cursor-pointer">
       <input
         type="checkbox"
-        value=""
         checked={checked}
         className="sr-only peer"
         onChange={toggle}

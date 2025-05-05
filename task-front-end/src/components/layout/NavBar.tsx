@@ -1,45 +1,25 @@
 import React from 'react';
-import styled from 'styled-components';
 import { FaTasks } from 'react-icons/fa';
 import { FiSun } from 'react-icons/fi';
 import { FiMoon } from 'react-icons/fi';
-import StyledIcon from '../common/StyledIcon';
-import ToggleSwitch from '../UI/ToggleSwitch';
+import { StyledIcon } from '../../styles/StyledIcon.styles';
+import ToggleSwitch from '../Ui/ToggleSwitch';
 import { useThemeContext } from '../../context/Theme/useThemeContext';
-
-const Nav = styled.div`
-  background-color: ${({ theme }) => theme.navBg};
-  height: 60px;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-`;
-
-const Title = styled.h1`
-  color: ${({ theme }) => theme.text};
-  font-size: 1rem;
-  font-weight: bold;
-`;
+import { Nav, NavContainer } from '../../styles/Layout.styles';
+import { H1Title } from '../../styles/Typography.styles';
 
 const NavBar = () => {
   const { isDark, toggleTheme } = useThemeContext();
   return (
     <Nav>
-      <Container>
+      <NavContainer>
         <StyledIcon>
           <FaTasks />
         </StyledIcon>
-        <Title>Task Nest App</Title>
-      </Container>
+        <H1Title>Task Nest App</H1Title>
+      </NavContainer>
 
-      <Container>
+      <NavContainer>
         <StyledIcon>
           <FiSun />
         </StyledIcon>
@@ -47,7 +27,7 @@ const NavBar = () => {
         <StyledIcon>
           <FiMoon />
         </StyledIcon>
-      </Container>
+      </NavContainer>
     </Nav>
   );
 };

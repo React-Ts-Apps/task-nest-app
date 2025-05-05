@@ -1,8 +1,8 @@
 import React from 'react';
 import { CustomThemeProvider } from './context/Theme/CustomThemeProvider';
 import './styles.css';
-import { GlobalStyle } from './styles/GlobalStyle';
-import Layout from './components/layout/Layout';
+import { GlobalStyle } from './styles/GlobalStyles.styles';
+import Layout from './components/Layout/Layout';
 
 const App = () => {
   return (

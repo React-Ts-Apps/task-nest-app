@@ -17,3 +17,13 @@ export type TaskItem = {
 };
 
 export type TaskList = TaskItem[];
+
+export type TaskColWrapperProps = {
+  $status: TaskStatus;
+};
+
+export type TaskColumnProps = {
+  tasks: TaskList;
+  column: TaskColumnData;
+};
+
