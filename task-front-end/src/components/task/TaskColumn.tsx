@@ -10,18 +10,19 @@ type TaskColumnProps = {
 };
 
 const TaskCol = styled.div`
-  background-colr: ${({ theme }) => theme.navBg};
+  background-color: ${({ theme }) => theme.navBg};
   border-radius: 8px;
   box-shadow: ${({ theme }) => theme.boxShadow};
   height: 100vh;
 `;
 const TaskColHeader = styled.div`
-  background-color: ${({ theme }) => theme.navBg};
+  background-color: ${({ theme }) => theme.columnHeaderBg};
   height: 60px;
   padding: 20px;
 `;
 const TaskColTitle = styled.h2`
   font-weight: bold;
+  font-size:16px;
 `;
 
 const TaskColumn = ({ column, tasks }: TaskColumnProps) => {

@@ -4,7 +4,7 @@ import type { TaskItem } from '../../types/TaskProps';
 import { useDraggable } from '@dnd-kit/core';
 
 const TaskItemCard = styled.div`
-  background-color: ${({ theme }) => theme.navBg};
+  background-color: ${({ theme }) => theme.background};
   padding: 15px;
   margin: 20px 10px;
   border-radius: 8px;
@@ -21,6 +21,7 @@ const TaskItemCard = styled.div`
 const CardTitle = styled.h3`
   font-weight: bold;
   font-style: normal;
+  font-size: 14px;
   padding-bottom: 10px;
 `;
 
