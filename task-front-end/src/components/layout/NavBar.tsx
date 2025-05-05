@@ -4,7 +4,7 @@ import { FaTasks } from 'react-icons/fa';
 import { FiSun } from 'react-icons/fi';
 import { FiMoon } from 'react-icons/fi';
 import StyledIcon from '../common/StyledIcon';
-import ToggleSwitch from '../common/ToggleSwitch';
+import ToggleSwitch from '../UI/ToggleSwitch';
 import { useThemeContext } from '../../context/Theme/useThemeContext';
 
 const Nav = styled.div`
