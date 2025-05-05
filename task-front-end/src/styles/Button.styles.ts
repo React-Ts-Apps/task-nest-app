@@ -28,3 +28,10 @@ export const ButtonWrapper = styled.div`
   justify-content: flex-end;
   padding: .5rem 2rem .25rem .5rem;
 `;
+
+export const TaskFormButtonWrapper = styled.div`
+  display: flex;
+  width: 1020px;
+  justify-content: flex-end;
+  padding: 1rem 2rem 2rem 8rem;
+`;

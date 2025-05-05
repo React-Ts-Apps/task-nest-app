@@ -7,6 +7,7 @@ export const lightTheme = {
   buttonBg: '#007bff',
   buttonHoverBg: '#0056b3',
   columnHeaderBg: '#e2e6ea',
+  borderColor: '#ccc',
 };
 
 export const darkTheme = {
@@ -18,6 +19,7 @@ export const darkTheme = {
   buttonBg: '#1e90ff',
   buttonHoverBg: '#1c7ed6',
   columnHeaderBg: '#2c2c2e',
+  borderColor: '#444',
 };
 
 
