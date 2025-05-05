@@ -1,33 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import React from 'react';
 import { COLUMNS, INITIAL_TASKS } from '../../data/Tasks';
 import TaskColumn from './TaskColumn';
 import { TaskStatus } from '../../types/TaskProps';
 import { DndContext, DragEndEvent } from '@dnd-kit/core';
 import useLocalStorage from '../../hooks/useLocalStorage';
-
-type TaskColWrapperProps = {
-  $status: TaskStatus;
-};
-
-const TaskBoardContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px;
-`;
-const TaskColumnWrapper = styled.div<TaskColWrapperProps>`
-  border-top: 2px solid
-    ${({ $status }) =>
-    $status === 'TODO' ? '#007acc' : $status === 'IN_PROGRESS' ? '#ff9900' : '#28a745'};
-`;
+import { TaskBoardContainer, TaskColumnWrapper } from '../../styles/Task.styles';
 
 const TaskBoard = () => {
   const [tasks, setTasks] = useLocalStorage('tasks', INITIAL_TASKS);
-
-  useEffect(() => {
-    console.log('Updated tasks:', tasks);
-  }, [tasks]);
 
   const handleDragEnd = (e: DragEndEvent) => {
     const { active, over } = e;
@@ -36,7 +16,8 @@ const TaskBoard = () => {
     const targetColumn = over.id as TaskStatus; //identify column by status
 
     setTasks((tasks) =>
-      tasks.map((task) => (task.id == draggedTaskId ? { ...task, status: targetColumn } : task)),
+      tasks.map((task) => (task.id == draggedTaskId ?
+        { ...task, status: targetColumn } : task)),
     );
   };
 

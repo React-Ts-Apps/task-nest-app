@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import { styled } from "styled-components";
 
-const NewTaskButton = styled.button`
+export const AddTaskButton = styled.button`
   padding: .5rem 1rem;
   background-color:${({ theme }) => theme.buttonBg};
   justify-content: center;
@@ -22,4 +22,9 @@ const NewTaskButton = styled.button`
     outline: none;
   }
 `;
-export default NewTaskButton
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding: .5rem 2rem .25rem .5rem;
+`;
