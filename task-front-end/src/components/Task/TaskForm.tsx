@@ -2,6 +2,7 @@ import React, { FormEvent, useState } from "react"
 import { TaskFormWrapper, TaskFormInput, TaskFormTextArea, TaskFormLabel, TaskFormGroup } from "../../styles/Task.styles"
 import { AddTaskButton, TaskFormButtonWrapper } from "../../styles/Button.styles"
 
+
 const TaskForm = () => {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
