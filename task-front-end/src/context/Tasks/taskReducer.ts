@@ -11,6 +11,12 @@ export const taskReducer = (state: TaskList, action: TaskReducerAction): TaskLis
                 status: 'TODO' as TaskStatus
             }
             return [newTask, ...state]
+        };
+        case 'UPDATE_TASK_STATUS': {
+            return state.map((task) =>
+                task.id === action.payload.id ?
+                    { ...task, status: action.payload.status }
+                    : task)
         }
         default: return state
     }
