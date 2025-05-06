@@ -17,7 +17,7 @@ const TaskCard = ({ task }: { task: TaskItem }) => {
     <div {...attributes} {...listeners} ref={setNodeRef} style={style}>
       <TaskItemCard>
         <TaskCardTitle>{task.title}</TaskCardTitle>
-        <TaskId>#{task.id}</TaskId>
+        <TaskId>#{task.taskNumber}</TaskId>
       </TaskItemCard>
     </div>
   );

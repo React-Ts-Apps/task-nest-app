@@ -7,13 +7,16 @@ import { useTaskContext } from "../../context/Tasks/useTaskContext"
 const TaskForm = () => {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
-    const { dispatch } = useTaskContext()
+    const { dispatch, taskNumber, incrementCounter } = useTaskContext()
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
         const newTask = {
-            title: title, description: description
+            title: title,
+            description: description,
+            taskNumber: taskNumber
         }
+        incrementCounter()
         dispatch({ type: 'ADD_TASK', payload: newTask })
     }
 

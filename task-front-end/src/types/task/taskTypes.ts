@@ -17,6 +17,7 @@ export type TaskItem = {
   assignee?: string;
   status: TaskStatus;
   createdAt: string;
+  taskNumber: number;
 };
 
 export type NewTaskItem = Omit<TaskItem, 'id' | 'status' | 'createdAt'>
