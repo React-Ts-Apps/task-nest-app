@@ -2,6 +2,7 @@ import React from 'react';
 import type { TaskItem } from '../../types/task/taskTypes';
 import { useDraggable } from '@dnd-kit/core';
 import { TaskItemCard, TaskCardTitle, TaskId } from '../../styles/Task.styles';
+import { Link } from 'react-router-dom';
 
 const TaskCard = ({ task }: { task: TaskItem }) => {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
@@ -15,11 +16,13 @@ const TaskCard = ({ task }: { task: TaskItem }) => {
 
   return (
     <div {...attributes} {...listeners} ref={setNodeRef} style={style}>
-      <TaskItemCard>
-        <TaskCardTitle>{task.title}</TaskCardTitle>
-        <TaskId>#{task.taskNumber}</TaskId>
-      </TaskItemCard>
-    </div>
+      <Link to={`/task/${task.id}`}>
+        <TaskItemCard>
+          <TaskCardTitle>{task.title}</TaskCardTitle>
+          <TaskId>#{task.taskNumber}</TaskId>
+        </TaskItemCard>
+      </Link>
+    </div >
   );
 };
 export default TaskCard;
