@@ -13,10 +13,12 @@ export type TaskColumnList = TaskColumnData[];
 export type TaskItem = {
   id: string;
   title: string;
-  description: string;
+  description?: string;
   assignee: string;
   status: TaskStatus;
 };
+
+export type NewTask = Omit<TaskItem, 'id' | 'assignee' | 'status'>
 
 export type TaskList = TaskItem[];
 
