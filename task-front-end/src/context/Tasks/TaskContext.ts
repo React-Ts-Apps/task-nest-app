@@ -4,7 +4,9 @@ import { TaskList } from "../../types/task/taskTypes";
 
 type taskContextTypes = {
     tasks: TaskList,
-    dispatch: Dispatch<any>
+    dispatch: Dispatch<any>,
+    taskNumber: number,
+    incrementCounter: () => void
 }
 
 export const TaskContext = createContext<taskContextTypes | null>(null)
