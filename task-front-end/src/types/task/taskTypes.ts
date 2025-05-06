@@ -14,11 +14,12 @@ export type TaskItem = {
   id: string;
   title: string;
   description?: string;
-  assignee: string;
+  assignee?: string;
   status: TaskStatus;
+  createdAt: string;
 };
 
-export type NewTask = Omit<TaskItem, 'id' | 'assignee' | 'status'>
+export type NewTaskItem = Omit<TaskItem, 'id' | 'status' | 'createdAt'>
 
 export type TaskList = TaskItem[];
 
@@ -31,7 +32,5 @@ export type TaskColumnProps = {
   column: TaskColumnData;
 };
 
-export type childProps = {
-  children: ReactNode;
-};
+
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import type { TaskColumnProps } from '../../types/TaskProps';
+import type { TaskColumnProps } from '../../types/task/taskTypes';
 import TaskCard from './TaskCard';
 import { useDroppable } from '@dnd-kit/core';
 import { TaskCol, TaskColHeader, TaskColTitle } from '../../styles/Task.styles';

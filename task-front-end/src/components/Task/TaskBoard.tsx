@@ -1,7 +1,7 @@
 import React from 'react';
 import { COLUMNS } from '../../data/Tasks';
 import TaskColumn from './TaskColumn';
-import { TaskList, TaskStatus } from '../../types/TaskProps';
+import { TaskList, TaskStatus } from '../../types/task/taskTypes';
 import { DndContext, DragEndEvent } from '@dnd-kit/core';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import { TaskBoardContainer, TaskColumnWrapper } from '../../styles/Task.styles';
