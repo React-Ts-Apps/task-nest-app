@@ -43,10 +43,12 @@ module.exports = {
 
     // Dev server configuration for development
     devServer: {
+
         static: {
             directory: path.join(__dirname, 'dist'), // Replace contentBase with static
         },
+        historyApiFallback: true,
+        open: true,
         port: 3000,
-        open: true, // Open the browser automatically
     },
 }
