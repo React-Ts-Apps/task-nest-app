@@ -31,7 +31,9 @@ export const ButtonWrapper = styled.div`
 
 export const TaskFormButtonWrapper = styled.div`
   display: flex;
-  width: 1020px;
+  width:100%;
+  max-width: 1000px;
+  min-width: 100px;
   justify-content: flex-end;
   padding: 1rem 2rem 2rem 8rem;
 `;
