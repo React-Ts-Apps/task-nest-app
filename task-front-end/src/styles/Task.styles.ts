@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { TaskColWrapperProps } from "../types/TaskProps";
+import { TaskColWrapperProps } from "../types/task/taskTypes";
 
 export const TaskBoardContainer = styled.div`
   display: grid;

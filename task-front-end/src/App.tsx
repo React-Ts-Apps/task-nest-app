@@ -3,12 +3,15 @@ import { CustomThemeProvider } from './context/Theme/CustomThemeProvider';
 import './styles.css';
 import { GlobalStyle } from './styles/GlobalStyles.styles';
 import Layout from './components/Layout/Layout';
+import { TaskProvider } from './context/Tasks/TaskProvider';
 
 const App = () => {
   return (
     <CustomThemeProvider>
       <GlobalStyle />
-      <Layout />
+      <TaskProvider>
+        <Layout />
+      </TaskProvider>
     </CustomThemeProvider>
   );
 };

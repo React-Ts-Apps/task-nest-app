@@ -1,13 +1,13 @@
 import React from 'react';
-import { COLUMNS, INITIAL_TASKS } from '../../data/Tasks';
+import { COLUMNS } from '../../data/Tasks';
 import TaskColumn from './TaskColumn';
-import { TaskStatus } from '../../types/TaskProps';
+import { TaskList, TaskStatus } from '../../types/task/taskTypes';
 import { DndContext, DragEndEvent } from '@dnd-kit/core';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import { TaskBoardContainer, TaskColumnWrapper } from '../../styles/Task.styles';
 
 const TaskBoard = () => {
-  const [tasks, setTasks] = useLocalStorage('tasks', INITIAL_TASKS);
+  const [tasks, setTasks] = useLocalStorage<TaskList>('tasks', []);
 
   const handleDragEnd = (e: DragEndEvent) => {
     const { active, over } = e;
@@ -15,10 +15,14 @@ const TaskBoard = () => {
     const draggedTaskId = active.id; //identify task being dragged by id
     const targetColumn = over.id as TaskStatus; //identify column by status
 
-    setTasks((tasks) =>
-      tasks.map((task) => (task.id == draggedTaskId ?
-        { ...task, status: targetColumn } : task)),
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === draggedTaskId
+          ? { ...task, status: targetColumn }
+          : task
+      )
     );
+
   };
 
   return (

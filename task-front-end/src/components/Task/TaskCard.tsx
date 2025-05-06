@@ -1,5 +1,5 @@
 import React from 'react';
-import type { TaskItem } from '../../types/TaskProps';
+import type { TaskItem } from '../../types/task/taskTypes';
 import { useDraggable } from '@dnd-kit/core';
 import { TaskItemCard, TaskCardTitle, TaskId } from '../../styles/Task.styles';
 

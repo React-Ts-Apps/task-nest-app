@@ -1,8 +1,8 @@
 import { createContext } from 'react';
 
-type themeContext = {
+type themeContextType = {
   toggleTheme: () => void;
   isDark: boolean;
 };
 
-export const CustomThemeContext = createContext<themeContext | undefined>(undefined);
+export const CustomThemeContext = createContext<themeContextType | undefined>(undefined);

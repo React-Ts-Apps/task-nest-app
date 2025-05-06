@@ -1,14 +1,20 @@
 import React, { FormEvent, useState } from "react"
 import { TaskFormWrapper, TaskFormInput, TaskFormTextArea, TaskFormLabel, TaskFormGroup } from "../../styles/Task.styles"
 import { AddTaskButton, TaskFormButtonWrapper } from "../../styles/Button.styles"
+import { useTaskContext } from "../../context/Tasks/useTaskContext"
 
 
 const TaskForm = () => {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
+    const { dispatch } = useTaskContext()
 
     const handleSubmit = (e: FormEvent) => {
-        e.preventDefault()
+        e.preventDefault();
+        const newTask = {
+            title: title, description: description
+        }
+        dispatch({ type: 'ADD_TASK', payload: newTask })
     }
 
     return (<div>
