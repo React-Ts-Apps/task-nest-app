@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 // Types
 export type TaskStatus = 'TODO' | 'IN_PROGRESS' | 'DONE';
 
@@ -9,7 +11,7 @@ export type TaskColumnData = {
 export type TaskColumnList = TaskColumnData[];
 
 export type TaskItem = {
-  id: number;
+  id: string;
   title: string;
   description: string;
   assignee: string;
@@ -25,5 +27,9 @@ export type TaskColWrapperProps = {
 export type TaskColumnProps = {
   tasks: TaskList;
   column: TaskColumnData;
+};
+
+export type childProps = {
+  children: ReactNode;
 };
 

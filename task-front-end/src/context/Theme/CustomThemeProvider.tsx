@@ -3,10 +3,7 @@ import { CustomThemeContext } from './CustomThemeContext';
 import { lightTheme, darkTheme } from '../../styles/themes';
 import { ThemeProvider } from 'styled-components';
 import useLocalStorage from '../../hooks/useLocalStorage';
-
-type childProps = {
-  children: ReactNode;
-};
+import { childProps } from '../../types/TaskProps';
 
 export const CustomThemeProvider = ({ children }: childProps) => {
   const [isDark, setIsDark] = useLocalStorage('theme', true);
