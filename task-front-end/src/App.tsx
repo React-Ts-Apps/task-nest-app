@@ -12,15 +12,12 @@ const App = () => {
   return (
     <CustomThemeProvider>
       <GlobalStyle />
-      <BrowserRouter>
+      <BrowserRouter basename='task-nest-app'>
         <TaskProvider>
           <NavBar />
           <Routes>
-            {
-              process.env.NODE_ENV === 'development' &&
-              <Route path='/' element={<Navigate to='/task-nest-app' replace />} />
-            }
-            <Route path="/task-nest-app" element={<Layout />} />
+            <Route path='/' element={<Navigate to="/task-nest-app/" />} />
+            <Route path="/task-nest-app/" element={<Layout />} />
             <Route path="/create-task" element={<TaskForm />} />
             <Route path="/task/:id" element={<TaskForm />} />
           </Routes>

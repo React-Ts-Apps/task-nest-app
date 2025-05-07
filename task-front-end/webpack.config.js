@@ -48,7 +48,7 @@ module.exports = {
             directory: path.join(__dirname, 'dist'), // Replace contentBase with static
         },
         port: 3000,
-        open: ['/'],
+        open: ['/task-nest-app/'],
         historyApiFallback: true,
     },
 }
