@@ -16,8 +16,7 @@ const App = () => {
         <TaskProvider>
           <NavBar />
           <Routes>
-            <Route path='/' element={<Navigate to="/task-nest-app/" />} />
-            <Route path="/task-nest-app/" element={<Layout />} />
+            <Route path='/' element={<Layout />} />
             <Route path="/create-task" element={<TaskForm />} />
             <Route path="/task/:id" element={<TaskForm />} />
           </Routes>
