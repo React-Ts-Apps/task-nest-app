@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     // Entry point for your application
@@ -38,6 +39,11 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './index.html', // Specify the location of your index.html
+        }),
+        new CopyPlugin({
+            patterns: [
+                { from: 'public/404.html', to: '404.html' }, // <- this line
+            ],
         }),
     ],
 
