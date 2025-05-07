@@ -1,8 +1,12 @@
 import { styled } from "styled-components";
 
-export const AddTaskButton = styled.button`
+interface ButtonProps {
+  $variant?: 'primary' | 'secondary'
+}
+
+export const StyledButton = styled.button<ButtonProps>`
   padding: .5rem 1rem;
-  background-color:${({ theme }) => theme.buttonBg};
+  background-color:${({ theme, $variant }) => $variant === 'secondary' ? theme.secondaryButton : theme.buttonBg};
   justify-content: center;
   width: 150px; 
   height: 30px;
@@ -36,4 +40,5 @@ export const TaskFormButtonWrapper = styled.div`
   min-width: 100px;
   justify-content: flex-end;
   padding: 1rem 2rem 2rem 8rem;
+  gap: 1rem;
 `;

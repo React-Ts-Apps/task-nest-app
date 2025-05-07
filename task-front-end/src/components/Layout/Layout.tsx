@@ -1,37 +1,30 @@
-import NavBar from './NavBar';
+
 import React, { useState } from 'react';
 import TaskBoard from '../Task/TaskBoard';
-import { AddTaskButton, ButtonWrapper } from '../../styles/Button.styles';
+import { StyledButton, ButtonWrapper } from '../../styles/Button.styles';
 import { FaPlus } from 'react-icons/fa';
 import { StyledIcon } from '../../styles/StyledIcon.styles';
 import TaskForm from '../Task/TaskForm';
 import { useNavigate } from 'react-router-dom';
 
 const Layout = () => {
-  const [showTaskForm, setShowTaskForm] = useState(false)
   const navigate = useNavigate();
 
   const handleNewTask = () => {
-    setShowTaskForm((prev) => !prev)
     navigate('/create-task')
   }
 
   return (
     <div>
-
-      {showTaskForm ? <TaskForm /> :
-        <div>
-          <ButtonWrapper>
-            <AddTaskButton onClick={() => handleNewTask()}>
-              Add New Task
-              <StyledIcon>
-                <FaPlus />
-              </StyledIcon>
-            </AddTaskButton>
-          </ButtonWrapper>
-          <TaskBoard />
-        </div>
-      }
+      <ButtonWrapper>
+        <StyledButton onClick={() => handleNewTask()}>
+          Add New Task
+          <StyledIcon>
+            <FaPlus />
+          </StyledIcon>
+        </StyledButton>
+      </ButtonWrapper>
+      <TaskBoard />
     </div>
   );
 };
