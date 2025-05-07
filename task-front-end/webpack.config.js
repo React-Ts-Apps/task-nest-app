@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 
+const isGhPages = process.env.GH_PAGES === 'true';
 module.exports = {
     // Entry point for your application
     entry: './src/index.tsx', // Use .tsx file as the entry point
@@ -39,12 +39,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './index.html', // Specify the location of your index.html
-        }),
-        new CopyPlugin({
-            patterns: [
-                { from: 'public/404.html', to: '404.html' }, // <- this line
-            ],
-        }),
+        })
     ],
 
     // Dev server configuration for development
@@ -54,7 +49,7 @@ module.exports = {
             directory: path.join(__dirname, 'dist'), // Replace contentBase with static
         },
         port: 3000,
-        open: ['/'],
+        open: isGhPages ? ['/'] : ['/task-nest-app'],
         historyApiFallback: true,
     },
 }

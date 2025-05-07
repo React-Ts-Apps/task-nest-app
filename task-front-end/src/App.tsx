@@ -12,7 +12,7 @@ const App = () => {
   return (
     <CustomThemeProvider>
       <GlobalStyle />
-      <BrowserRouter basename='task-nest-app'>
+      <BrowserRouter basename='/task-nest-app'>
         <TaskProvider>
           <NavBar />
           <Routes>
