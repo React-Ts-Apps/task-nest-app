@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script>
+      // Get the full path after the domain and redirect back to it
+      const path = window.location.pathname;
+      const search = window.location.search;
+      const hash = window.location.hash;
+      const fullPath = '/task-nest-app' + path.replace('/task-nest-app', '') + search + hash;
 
-<head>
-    <meta http-equiv="refresh" content="0; url=/task-nest-app/" />
-</head>
-
-<body></body>
-
+      window.location.replace(fullPath);
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
 </html>
