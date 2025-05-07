@@ -7,6 +7,7 @@ export const TaskBoardContainer = styled.div`
   gap: 20px;
   padding: 20px;
 `;
+
 export const TaskColumnWrapper = styled.div<TaskColWrapperProps>`
   border-top: 2px solid
     ${({ $status }) =>
@@ -54,6 +55,21 @@ export const TaskColTitle = styled.h2`
     font-weight: bold;
     font-size:14px;
   `;
+
+export const TaskFormTitleWrapper = styled.div`
+    display: flex;
+    width:100%;
+    max-width: 1000px;
+    min-width: 100px;
+    justify-content: space-between;
+    padding: 1rem 2rem 2rem 2rem;
+`;
+
+export const TaskFormTitle = styled.h1`
+  font-weight: bold;
+  font-size:1.2rem;
+`;
+
 export const TaskFormWrapper = styled.form`
   display: flex;
   flex-direction: column;

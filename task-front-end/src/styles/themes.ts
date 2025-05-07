@@ -8,6 +8,7 @@ export const lightTheme = {
   buttonHoverBg: '#0056b3',
   columnHeaderBg: '#e2e6ea',
   borderColor: '#ccc',
+  secondaryButton: '#ff5c5c',
 };
 
 export const darkTheme = {
@@ -20,6 +21,7 @@ export const darkTheme = {
   buttonHoverBg: '#1c7ed6',
   columnHeaderBg: '#2c2c2e',
   borderColor: '#444',
+  secondaryButton: '#ff1c1c',
 };
 
 

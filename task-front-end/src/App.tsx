@@ -12,13 +12,13 @@ const App = () => {
   return (
     <CustomThemeProvider>
       <GlobalStyle />
+      <NavBar />
       <HashRouter>
         <TaskProvider>
-          <NavBar />
           <Routes>
             <Route path="/" element={<Layout />} />
-            <Route path="/create-task" element={<TaskForm />} />
-            <Route path="/task/:id" element={<TaskForm />} />
+            <Route path="/create-task" element={<TaskForm isViewMode={false} />} />
+            <Route path="/task/:id" element={<TaskForm isViewMode={true} />} />
             {/* Optional redirect for unknown routes */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
