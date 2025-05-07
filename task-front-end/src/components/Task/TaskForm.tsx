@@ -3,16 +3,22 @@ import { TaskFormWrapper, TaskFormInput, TaskFormTextArea, TaskFormLabel, TaskFo
 import { StyledButton, TaskFormButtonWrapper } from "../../styles/Button.styles"
 import { useTaskContext } from "../../context/Tasks/useTaskContext"
 import { useNavigate, useParams } from "react-router-dom"
-import { TaskItem } from "../../types/task/taskTypes"
+import { TaskItem, TaskStatus } from "../../types/task/taskTypes"
 import { StyledEdit } from "../../styles/StyledIcon.styles"
 import { Tooltip } from 'react-tooltip'
 
+const initialFormState = {
+    id: '',
+    title: '',
+    description: '',
+    taskNumber: 0,
+    status: 'TODO' as TaskStatus,
+    createdAt: '',
+}
 const TaskForm = ({ isViewMode }: { isViewMode: boolean }) => {
-    const [title, setTitle] = useState('')
-    const [description, setDescription] = useState('')
     const { tasks, dispatch, taskNumber, incrementCounter } = useTaskContext()
-    const [isReadOnly, setIsReadOnly] = useState(!isViewMode)
-    const [item, setItem] = useState<TaskItem>()
+    const [isReadOnly, setIsReadOnly] = useState(isViewMode)
+    const [item, setItem] = useState<TaskItem>(initialFormState)
     const { id } = useParams()
     const navigate = useNavigate()
 
@@ -21,8 +27,6 @@ const TaskForm = ({ isViewMode }: { isViewMode: boolean }) => {
             const taskItem = tasks.find((task) => task.id === id)
             if (taskItem) {
                 setItem(taskItem)
-                setTitle(taskItem.title);
-                setDescription(taskItem.description || '')
             }
         }
     }, [])
@@ -31,19 +35,24 @@ const TaskForm = ({ isViewMode }: { isViewMode: boolean }) => {
         e.preventDefault();
 
         if (isViewMode && item) {
-            dispatch({ type: 'UPDATE_TASK', payload: { ...item, title, description } })
+            dispatch({ type: 'UPDATE_TASK', payload: item })
             navigate('/')
         }
         else {
             const newTask = {
-                title: title,
-                description: description,
+                title: item.title,
+                description: item.description,
                 taskNumber: taskNumber
             }
             incrementCounter()
             dispatch({ type: 'ADD_TASK', payload: newTask })
             navigate('/')
         }
+    }
+
+    const handleFormChange = (e: FormEvent) => {
+        const { name, value } = e.target as HTMLInputElement
+        setItem((prev) => ({ ...prev, [name]: value }))
     }
 
     const handleCancel = () => {
@@ -55,7 +64,7 @@ const TaskForm = ({ isViewMode }: { isViewMode: boolean }) => {
     }
 
     return (<div>
-        <TaskFormWrapper >
+        <TaskFormWrapper>
             <TaskFormGroup>
                 {
                     isViewMode &&
@@ -70,15 +79,18 @@ const TaskForm = ({ isViewMode }: { isViewMode: boolean }) => {
                 }
 
                 <TaskFormLabel htmlFor="task_input">Add a title *</TaskFormLabel>
-                <TaskFormInput readOnly={isReadOnly} id="task_input" type='text' placeholder="Enter title"
-                    value={title} onChange={(e) => setTitle(e.target.value)} />
+                <TaskFormInput name="title" readOnly={isReadOnly} id="task_input" type='text' placeholder="Enter title"
+                    value={item.title} onChange={handleFormChange} />
             </TaskFormGroup>
             <TaskFormGroup>
                 <TaskFormLabel htmlFor="task_desc">Add task description</TaskFormLabel>
-                <TaskFormTextArea id="task_desc"
+                <TaskFormTextArea
+                    name="description"
+                    id="task_desc"
                     readOnly={isReadOnly}
                     placeholder="Enter task description"
-                    value={description} onChange={(e) => setDescription(e.target.value)} />
+                    onChange={handleFormChange}
+                    value={item.description} />
             </TaskFormGroup>
             <TaskFormButtonWrapper>
                 <StyledButton type='button' $variant="secondary" onClick={handleCancel}>Cancel Changes</StyledButton>
