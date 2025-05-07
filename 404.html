@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+      (function () {
+        var path = window.location.pathname;
+        var search = window.location.search || '';
+        var hash = window.location.hash || '';
+
+        // Only redirect if not already at the base path
+        var target = '/task-nest-app' + path.replace(/^\/task-nest-app/, '') + search + hash;
+
+        // Avoid redirect loop
+        if (window.location.pathname !== target) {
+          window.location.replace(target);
+        }
+      })();
+    </script>
+    <style>html, body { display: none; }</style>
+  </head>
+  <body></body>
+</html>
+
