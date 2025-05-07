@@ -4,7 +4,7 @@ import './styles.css';
 import { GlobalStyle } from './styles/GlobalStyles.styles';
 import Layout from './components/Layout/Layout';
 import { TaskProvider } from './context/Tasks/TaskProvider';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import TaskForm from './components/Task/TaskForm';
 import NavBar from './components/Layout/NavBar';
 
@@ -12,16 +12,18 @@ const App = () => {
   return (
     <CustomThemeProvider>
       <GlobalStyle />
-      <BrowserRouter basename='/task-nest-app'>
+      <HashRouter>
         <TaskProvider>
           <NavBar />
           <Routes>
-            <Route path='/' element={<Layout />} />
+            <Route path="/" element={<Layout />} />
             <Route path="/create-task" element={<TaskForm />} />
             <Route path="/task/:id" element={<TaskForm />} />
+            {/* Optional redirect for unknown routes */}
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </TaskProvider>
-      </BrowserRouter>
+      </HashRouter>
     </CustomThemeProvider>
   );
 };
