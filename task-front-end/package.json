@@ -7,9 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
-    "build:css": "postcss src/styles.css -o dist/styles.css",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "build:css": "postcss src/styles.css -o dist/styles.css"
   },
   "keywords": [],
   "author": "",
