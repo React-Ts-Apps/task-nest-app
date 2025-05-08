@@ -1,6 +1,12 @@
 {
     "buildCommand": "npm run build",
-    "devCommand": "npm start",
     "outputDirectory": "dist",
-    "installCommand": "npm install"
+    "rootDirectory": "task-front-end",
+    "installCommand": "npm install",
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
+        }
+    ]
 }
