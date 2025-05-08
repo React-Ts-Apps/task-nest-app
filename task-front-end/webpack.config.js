@@ -8,7 +8,7 @@ module.exports = {
 
     // Output configuration
     output: {
-        path: path.resolve(__dirname, 'task-front-end/dist'),
+        path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
         publicPath: '/task-nest-app/',  // Update if needed
     },
