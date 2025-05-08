@@ -1,7 +1,6 @@
 {
     "buildCommand": "npm run build",
     "outputDirectory": "dist",
-    "rootDirectory": "task-front-end",
     "installCommand": "npm install",
     "rewrites": [
         {
