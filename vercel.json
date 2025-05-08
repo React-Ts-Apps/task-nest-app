@@ -1,20 +1,17 @@
 {
     "builds": [
         {
-            "src": "package.json",
+            "src": "task-front-end/package.json",
             "use": "@vercel/static-build",
             "config": {
-                "distDir": "dist"
+                "distDir": "task-front-end/dist"
             }
         }
     ],
-    "rootDirectory": "task-front-end",
-    "buildCommand": "npm run build",
-    "outputDirectory": "dist",
-    "rewrites": [
+    "routes": [
         {
-            "source": "/(.*)",
-            "destination": "/index.html"
+            "src": "/(.*)",
+            "dest": "/task-front-end/dist/index.html"
         }
     ]
 }
