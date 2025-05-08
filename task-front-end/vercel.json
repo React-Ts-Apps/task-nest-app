@@ -1,10 +1,4 @@
 {
-    "builds": [
-        {
-            "src": "task-front-end/package.json",
-            "use": "@vercel/static-build"
-        }
-    ],
     "routes": [
         {
             "src": "/task-nest-app/(.*)",
