@@ -8,9 +8,9 @@ module.exports = {
 
     // Output configuration
     output: {
-        path: path.resolve(__dirname, 'dist'), // Output the bundled files in the 'dist' folder
-        filename: 'bundle.js', // The name of the output bundle
-        publicPath: '/task-nest-app/',
+        path: path.resolve(__dirname, 'task-front-end/dist'),
+        filename: 'bundle.js',
+        publicPath: '/task-nest-app/',  // Update if needed
     },
 
     // Module configuration for processing files
