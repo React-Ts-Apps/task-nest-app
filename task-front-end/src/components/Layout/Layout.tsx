@@ -1,10 +1,9 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import TaskBoard from '../Task/TaskBoard';
 import { StyledButton, ButtonWrapper } from '../../styles/Button.styles';
 import { FaPlus } from 'react-icons/fa';
 import { StyledIcon } from '../../styles/StyledIcon.styles';
-import TaskForm from '../Task/TaskForm';
 import { useNavigate } from 'react-router-dom';
 
 const Layout = () => {

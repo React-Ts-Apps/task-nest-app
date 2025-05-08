@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6", // Use es6 for modern JavaScript
     "lib": [
       "dom",
-      "es2015"
+      "es2020"
     ],
     "allowJs": true,
-    "jsx": "react",
+    "jsx": "react-jsx", // Use the new JSX runtime (React 17+)
     "moduleResolution": "node",
     "strict": true,
     "esModuleInterop": true,
