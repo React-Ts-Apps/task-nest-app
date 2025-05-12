@@ -10,7 +10,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
-        publicPath: '/task-nest-app/',  // Update if needed
+        publicPath: '/',  // Update if needed
     },
 
     // Module configuration for processing files
