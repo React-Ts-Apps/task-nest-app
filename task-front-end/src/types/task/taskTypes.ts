@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 // Types
-export type TaskStatus = 'TODO' | 'IN_PROGRESS' | 'DONE';
+export type TaskStatus = 'BACKLOG' | 'TODO' | 'IN_PROGRESS' | 'DONE';
 
 export type TaskColumnData = {
   id: TaskStatus;

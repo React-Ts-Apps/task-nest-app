@@ -1,9 +1,17 @@
 import { styled } from "styled-components";
-import { TaskColWrapperProps } from "../types/task/taskTypes";
+import { TaskColWrapperProps, TaskStatus } from "../types/task/taskTypes";
+
+
+const STATUS_BORDER_COLOR: Record<TaskStatus, string> = {
+  BACKLOG: '#FF0000',
+  TODO: '#007acc',
+  IN_PROGRESS: '#ff9900',
+  DONE: '#28a745'
+};
 
 export const TaskBoardContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 20px;
 `;
@@ -11,8 +19,8 @@ export const TaskBoardContainer = styled.div`
 export const TaskColumnWrapper = styled.div<TaskColWrapperProps>`
   border-top: 2px solid
     ${({ $status }) =>
-    $status === 'TODO' ? '#007acc' : $status === 'IN_PROGRESS' ? '#ff9900' : '#28a745'};
-`;
+    STATUS_BORDER_COLOR[$status]}`;
+
 
 export const TaskItemCard = styled.div`
   background-color: ${({ theme }) => theme.background};
@@ -51,6 +59,7 @@ export const TaskColHeader = styled.div`
     height: 60px;
     padding: 20px;
   `;
+
 export const TaskColTitle = styled.h2`
     font-weight: bold;
     font-size:14px;

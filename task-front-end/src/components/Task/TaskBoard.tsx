@@ -27,7 +27,8 @@ const TaskBoard = () => {
               <TaskColumn
                 column={col}
                 tasks={tasks.filter((task) => task.status == col.id)}
-              ></TaskColumn>
+              >
+              </TaskColumn>
             </TaskColumnWrapper>
           ))}
         </TaskBoardContainer>
