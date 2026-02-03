@@ -42,3 +42,35 @@ export const TaskFormButtonWrapper = styled.div`
   padding: 1rem 2rem 2rem 8rem;
   gap: 1rem;
 `;
+
+export const AgentButton = styled.button`
+  margin: 10px;
+  display: block;
+  background-color: ${({ theme }) => theme.agentButtonBg};
+  color: ${({ theme }) => theme.agentButtonText};
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+  font-size: 12px;
+  font-weight: bold;
+`;
+
+
+export const AgentLogContainer = styled.div`
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  background-color: ${({ theme }) => theme.buttonBg + "22"}; // slightly transparent
+  color: ${({ theme }) => theme.text};
+  font-size: 0.85rem;
+  height: 200px;
+  overflow-y: auto;
+  white-space: pre-wrap; // keeps newlines
+  word-break: break-word;
+`;
+
+export const AgentLog = styled.div`
+padding: 1rem;
+`;

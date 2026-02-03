@@ -9,6 +9,8 @@ export const lightTheme = {
   columnHeaderBg: '#e2e6ea',
   borderColor: '#ccc',
   secondaryButton: '#ff5c5c',
+  agentButtonBg: "#0070f3",
+  agentButtonText: "#ffffff",
 };
 
 export const darkTheme = {
@@ -22,6 +24,8 @@ export const darkTheme = {
   columnHeaderBg: '#2c2c2e',
   borderColor: '#444',
   secondaryButton: '#ff1c1c',
+  agentButtonBg: "#2e3238",
+  agentButtonText: "#ffffff",
 };
 
 

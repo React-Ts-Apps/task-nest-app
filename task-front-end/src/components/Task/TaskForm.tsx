@@ -31,9 +31,8 @@ const TaskForm = ({ isViewMode }: { isViewMode: boolean }) => {
         }
     }, [])
 
-    const handleSubmit = (e: FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-
         if (isViewMode && item) {
             dispatch({ type: 'UPDATE_TASK', payload: item })
             navigate('/')

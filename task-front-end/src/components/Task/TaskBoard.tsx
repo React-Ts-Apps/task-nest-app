@@ -5,6 +5,8 @@ import { TaskStatus } from '../../types/task/taskTypes';
 import { DndContext, DragEndEvent } from '@dnd-kit/core';
 import { TaskBoardContainer, TaskColumnWrapper } from '../../styles/Task.styles';
 import { useTaskContext } from '../../context/Tasks/useTaskContext';
+import TaskAgentPanel from './TaskAgentPanel';
+import { prioritizerAgent } from '../../agents/TaskAgents';
 
 const TaskBoard = () => {
   const { tasks, dispatch } = useTaskContext()
@@ -19,9 +21,11 @@ const TaskBoard = () => {
   };
 
   return (
-    <DndContext onDragEnd={handleDragEnd}>
-      <div>
-        <TaskBoardContainer>
+
+    <div>
+      <TaskBoardContainer>
+        <TaskAgentPanel agents={[prioritizerAgent]} />
+        <DndContext onDragEnd={handleDragEnd}>
           {COLUMNS.map((col) => (
             <TaskColumnWrapper key={col.id} $status={col.id}>
               <TaskColumn
@@ -31,9 +35,9 @@ const TaskBoard = () => {
               </TaskColumn>
             </TaskColumnWrapper>
           ))}
-        </TaskBoardContainer>
-      </div>
-    </DndContext>
+        </DndContext>
+      </TaskBoardContainer>
+    </div>
   );
 };
 export default TaskBoard;
