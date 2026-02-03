@@ -4,7 +4,7 @@ TaskNest is a task management application built with **React**, **TypeScript**, 
 
 ## 🌍 Live Demo
 
-**🔗 [View TaskNest Live](https://react-ts-apps.github.io/task-nest-app/)**
+**🔗 [View TaskNest Live](https://task-nest-app.onrender.com/)**
 
 ---
 
@@ -45,10 +45,10 @@ To lint your code:
 <pre><code>
     npx eslint src --ext .ts,.tsx</code></pre>
 
-###  🔗 7. Deployment (GitHub Pages)
-- Use a deploy tool (like gh-pages) or manually push dist to the gh-pages branch.
-- Ensure this is set in package.json:
-<pre><code>"homepage": "https://react-ts-apps.github.io/task-nest-app/"</code></pre>
+###  🔗 7. Deployment (Render)
+- Deployed using Render.
+- Visit: 
+<pre><code>https://render.com/</code></pre>
 
 
 ###  🧰 8. Tech Stack
